@@ -1,11 +1,38 @@
 <template>
   <div id="app">
     <codemirror-editor />
+    <div class="footer">
+      <p>
+        <span id="busuanzi_container_site_pv" style="display: inline"
+          >本站总访问数：<span id="busuanzi_value_site_pv"></span></span
+        ><span
+          id="busuanzi_container_site_uv"
+          style="padding-left: 6px; display: inline"
+          >访客数：<span id="busuanzi_value_site_uv"></span
+        ></span>
+      </p>
+      <p>
+        <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"
+          ><span style="padding-right: 6px"> 蜀ICP备2023029096号-1</span></a
+        ><a target="_blank" rel="noopener" href="https://beian.mps.gov.cn/"
+          ><span style="padding-right: 6px">
+            川公网安备51019002005981号
+          </span></a
+        >
+      </p>
+    </div>
   </div>
 </template>
 
-<script setup>
-import CodemirrorEditor from '@/views/CodemirrorEditor.vue'
+<script>
+import CodemirrorEditor from "@/views/CodemirrorEditor.vue";
+
+export default {
+  components: { CodemirrorEditor },
+  mounted() {
+    console.log(1);
+  },
+};
 </script>
 
 <style lang="less">
@@ -66,6 +93,21 @@ body,
   }
   &:hover {
     background: #f0f0f0;
+  }
+}
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  p {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 100;
+    color: #aaa;
+    a {
+      color: #aaa;
+    }
   }
 }
 </style>
